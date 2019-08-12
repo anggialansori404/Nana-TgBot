@@ -37,12 +37,12 @@ DELAY_TIME = 60 # seconds
 async def afk(client, message):
 	if len(message.text.split()) >= 2:
 		set_afk(True, message.text.split(None, 1)[1])
-		await message.edit("{} sekarang AFK!\nKarena {}".format(mention_markdown(message.from_user.id, message.from_user.first_name), message.text.split(None, 1)[1]))
-		await setbot.send_message(Owner, "Kamu sedang AFK!\nKarena {}".format(message.text.split(None, 1)[1]))
+		await message.edit("{} Sekarang AFK!\nKarena {}".format(mention_markdown(message.from_user.id, message.from_user.first_name), message.text.split(None, 1)[1]))
+		await setbot.send_message(Owner, "Kamu Sekarang AFK!\nKarena {}".format(message.text.split(None, 1)[1]))
 	else:
 		set_afk(True, "")
-		await message.edit("{} is now AFK!".format(mention_markdown(message.from_user.id, message.from_user.first_name)))
-		await setbot.send_message(Owner, "You are now AFK!")
+		await message.edit("{} Sekarang AFK!".format(mention_markdown(message.from_user.id, message.from_user.first_name)))
+		await setbot.send_message(Owner, "Kamu Sekarang AFK!")
 	await message.stop_propagation()
 
 
