@@ -8,6 +8,16 @@ from nana.helpers.misc import paginate_modules
 
 
 HELP_STRINGS = f"""
+   _____      _                       _     _____        _                    
+  / ____|    | |                     | |   |  __ \      | |                   
+ | (___   ___| | __ _ _ __ ___   __ _| |_  | |  | | __ _| |_ __ _ _ __   __ _ 
+  \___ \ / _ | |/ _` | '_ ` _ \ / _` | __| | |  | |/ _` | __/ _` | '_ \ / _` |
+  ____) |  __| | (_| | | | | | | (_| | |_  | |__| | (_| | || (_| | | | | (_| |
+ |_____/ \___|_|\__,_|_| |_| |_|\__,_|\__| |_____/ \__,_|\__\__,_|_| |_|\__, |
+                                                                         __/ |
+                                                                        |___/ 
+
+
 Hai! Kenalkan aku {BotName}, aku adalah asisten mu!
 Aku dapat membantumu dalam berbagai hal.
 
