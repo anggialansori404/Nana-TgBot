@@ -37,8 +37,8 @@ DELAY_TIME = 60 # seconds
 async def afk(client, message):
 	if len(message.text.split()) >= 2:
 		set_afk(True, message.text.split(None, 1)[1])
-		await message.edit("{} is now AFK!\nBecause of {}".format(mention_markdown(message.from_user.id, message.from_user.first_name), message.text.split(None, 1)[1]))
-		await setbot.send_message(Owner, "You are now AFK!\nBecause of {}".format(message.text.split(None, 1)[1]))
+		await message.edit("{} sekarang AFK!\nKarena {}".format(mention_markdown(message.from_user.id, message.from_user.first_name), message.text.split(None, 1)[1]))
+		await setbot.send_message(Owner, "Kamu sedang AFK!\nKarena {}".format(message.text.split(None, 1)[1]))
 	else:
 		set_afk(True, "")
 		await message.edit("{} is now AFK!".format(mention_markdown(message.from_user.id, message.from_user.first_name)))
@@ -61,9 +61,9 @@ async def afk_mentioned(client, message):
 				return
 		AFK_RESTIRECT[cid] = int(time.time()) + DELAY_TIME
 		if get['reason']:
-			await message.reply("Sorry, {} is AFK!\nBecause of {}".format(mention_markdown(Owner, OwnerName), get['reason']))
+			await message.reply("Maaf, {} Sedang AFK!\nKarena of {}".format(mention_markdown(Owner, OwnerName), get['reason']))
 		else:
-			await message.reply("Sorry, {} is AFK!".format(mention_markdown(Owner, OwnerName)))
+			await message.reply("Maaf, {} Sedang AFK!".format(mention_markdown(Owner, OwnerName)))
 
 		content, message_type = get_message_type(message)
 		if message_type == Types.TEXT:
@@ -75,17 +75,17 @@ async def afk_mentioned(client, message):
 			text = message_type.name
 
 		MENTIONED.append({"user": message.from_user.first_name, "user_id": message.from_user.id, "chat": message.chat.title, "chat_id": cid, "text": text, "message_id": message.message_id})
-		button = InlineKeyboardMarkup([[InlineKeyboardButton("Go to message", url="https://t.me/c/{}/{}".format(cid, message.message_id))]])
-		await setbot.send_message(Owner, "{} mentioned you in {}\n\n{}\n\nTotal count: `{}`".format(mention_markdown(message.from_user.id, message.from_user.first_name), message.chat.title, text[:3500], len(MENTIONED)), reply_markup=button)
+		button = InlineKeyboardMarkup([[InlineKeyboardButton("Pergi Ke Pesan", url="https://t.me/c/{}/{}".format(cid, message.message_id))]])
+		await setbot.send_message(Owner, "{} menyebut nama mu di {}\n\n{}\n\nJumlah Total: `{}`".format(mention_markdown(message.from_user.id, message.from_user.first_name), message.chat.title, text[:3500], len(MENTIONED)), reply_markup=button)
 
 @app.on_message(Filters.user("self") & Filters.group, group=12)
 async def no_longer_afk(client, message):
 	global MENTIONED
 	get = get_afk()
 	if get and get['afk']:
-		await setbot.send_message(message.from_user.id, "You are no longer afk!")
+		await setbot.send_message(message.from_user.id, "Yeay! Sekarang kamu sudah tidak AFK!")
 		set_afk(False, "")
-		text = "**Total {} mentioned you**\n".format(len(MENTIONED))
+		text = "**Total {} menyebutmu**\n".format(len(MENTIONED))
 		for x in MENTIONED:
 			msg_text = x["text"]
 			if len(msg_text) >= 11:
