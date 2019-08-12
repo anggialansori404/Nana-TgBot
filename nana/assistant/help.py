@@ -8,15 +8,15 @@ from nana.helpers.misc import paginate_modules
 
 
 HELP_STRINGS = f"""
-Hello! I am {BotName}, your Assistant!
-I can help you for many things.
+Hai! Kenalkan aku {BotName}, aku adalah asisten mu!
+Aku dapat membantumu dalam berbagai hal.
 
-**Main** commands available::
- - /start: get your bot status
- - /stats: get your userbot status
- - /settings: settings your userbot
- - /getme: get your userbot profile info
- - /help: get all modules help
+**Main** Perintah yang tersedia :
+ - /start: Untuk mendapatkan status bot
+ - /stats: Untuk mendapatkan status userbot
+ - /settings: Pengaturan userboot
+ - /getme: Untuk mendapatkan info profil userbot
+ - /help: mendapatkan semua perintah
 
 You can use {", ".join(Command)} on your userbot to execute that commands.
 Here is current modules you have
