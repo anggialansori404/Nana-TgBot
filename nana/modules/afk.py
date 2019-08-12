@@ -61,7 +61,7 @@ async def afk_mentioned(client, message):
 				return
 		AFK_RESTIRECT[cid] = int(time.time()) + DELAY_TIME
 		if get['reason']:
-			await message.reply("Maaf, {} Sedang AFK!\nKarena of {}".format(mention_markdown(Owner, OwnerName), get['reason']))
+			await message.reply("Maaf, {} Sedang AFK!\nKarena {}".format(mention_markdown(Owner, OwnerName), get['reason']))
 		else:
 			await message.reply("Maaf, {} Sedang AFK!".format(mention_markdown(Owner, OwnerName)))
 
